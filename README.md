@@ -1,3 +1,4 @@
+```
 mutation ExamplePQuery {
   addHuman(
     human : {
@@ -17,7 +18,9 @@ mutation ExamplePQuery {
         }
   }
 }
+```
 
+```
 query ExamplePQuery {
   humans {
     __typename
@@ -36,9 +39,12 @@ query ExamplePQuery {
       }
   }
 }
+```
 
+```
 query ExamplePQuery {
   human (id: 2) {
     name
   }
 }
+```
