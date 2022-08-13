@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server')
 
-        const humanSchema = gql `
+const humanSchema = gql `
   scalar DateTime
 
   interface Human {
@@ -64,7 +64,6 @@ const { gql } = require('apollo-server')
     mensagem: String!
     human: Human!
   }
-
 `
 
 module.exports = humanSchema
