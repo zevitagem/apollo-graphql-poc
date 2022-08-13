@@ -1,0 +1,24 @@
+version: "2"
+services:
+  apollo-server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: "node:16"
+    container_name: apollo-server
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./package.json:/usr/src/app/package.json
+      - type: bind
+        source: ./source
+        target: /usr/src/app/source
+    command: npm start
+    networks:
+      - study-network
+    ports:
+      - "4000:4000"
+      
+networks:
+  study-network:
+    external: true

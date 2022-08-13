@@ -1,25 +1,16 @@
 {
-  "name": "roteiro",
+  "name": "docker_web_app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Node.js on Docker",
+  "author": "José Victor <josevictor.jvds@gmail.com>",
+  "main": "source/server.js",
   "scripts": {
-    "start": "nodemon ./api/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon -L source/server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alura-cursos/1922-graphql.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alura-cursos/1922-graphql/issues"
-  },
-  "homepage": "https://github.com/alura-cursos/1922-graphql#readme",
   "dependencies": {
-    "json-server": "^0.16.1",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "apollo-server": "^3.10.1",
+    "graphql": "^16.5.0",
+    "apollo-datasource-rest": "^3.6.1"
   }
 }
