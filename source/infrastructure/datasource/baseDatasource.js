@@ -1,9 +1,9 @@
-const {RESTDataSource} = require('apollo-datasource-rest')
+const {RESTDataSource} = require('apollo-datasource-rest');
 
 class baseDatasource extends RESTDataSource {
     constructor() {
 
-        super()
+        super();
 
         if (this.constructor == baseDatasource) {
             throw new Error("Abstract classes can't be instantiated.");
@@ -17,4 +17,4 @@ class baseDatasource extends RESTDataSource {
     }
 }
 
-module.exports = baseDatasource
+module.exports = baseDatasource;

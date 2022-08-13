@@ -1,13 +1,13 @@
-const userSchema = require('../../domain/schema/user.graphql')
-const userResolver = require('../resolver/userResolver')
-const userDatasource = require('../../infrastructure/datasource/userDatasource')
+const humanSchema = require('../../domain/schema/human.graphql');
+const humanResolver = require('../resolver/humanResolver');
+const humanDatasource = require('../../infrastructure/datasource/humanDatasource');
 
 module.exports = new class {
-    createUser() {
+    createHuman() {
         return {
-            schema: userSchema,
-            resolver: userResolver,
-            datasource: userDatasource
-        }
+            schema: humanSchema,
+            resolver: humanResolver,
+            dataSource: humanDatasource
+        };
     }
-}
+};

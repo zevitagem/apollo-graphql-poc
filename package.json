@@ -12,5 +12,8 @@
     "apollo-server": "^3.10.1",
     "graphql": "^16.5.0",
     "apollo-datasource-rest": "^3.6.1"
+  },
+  "peerDependencies": {
+    "node-fetch": "^2.0.0"
   }
 }

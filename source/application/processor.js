@@ -1,21 +1,28 @@
-const { mergeTypeDefs } = require('@graphql-tools/merge')
+const {mergeTypeDefs} = require('@graphql-tools/merge');
 
-const entitiesFactory = require('./factory/entitiesFactory.js')
+const entitiesFactory = require('./factory/entitiesFactory.js');
 
-userConfig = entitiesFactory.createUser();
-    userSchema = userConfig.schema;
-    userResolver = userConfig.resolver;
-    userDatasource = userConfig.datasource;
-    
-const typeDefs = mergeTypeDefs([userSchema])
-const resolvers = [userResolver]
+var entities = ['Human'],
+        schemas = new Array(),
+        resolvers = new Array(),
+        tempDataSources = new Object();
+
+entities.forEach(function (entity) {
+    config = entitiesFactory[`create${entity}`]();
+
+    schemas.push(config.schema);
+    resolvers.push(config.resolver);
+    tempDataSources[entity] = config.dataSource;
+});
+
+const typeDefs = mergeTypeDefs(schemas);
 
 const dataSources = () => ({
-  userDatasource: new userDatasource()
-})
+    human: new tempDataSources['Human']
+});
 
 module.exports = {
     typeDefs,
     resolvers,
     dataSources
-}
+};
