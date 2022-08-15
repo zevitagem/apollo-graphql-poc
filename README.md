@@ -48,3 +48,8 @@ query ExamplePQuery {
   }
 }
 ```
+
+---
+
+## Dependências:
+- https://github.com/zevitagem/node-server-poc
